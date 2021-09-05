@@ -6,28 +6,22 @@
 /*   By: tandroma <tandroma@student.21-schoo>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/05 18:46:50 by tandroma          #+#    #+#             */
-/*   Updated: 2021/09/05 19:06:35 by tandroma         ###   ########.fr       */
+/*   Updated: 2021/09/05 19:58:33 by tandroma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strcmp(char	*s1, char	*s2)
 {
-	int	i_s1;
-	int	i_s2;
+	int	i;
 
-	i_s1 = 0;
-	i_s2 = 0;
-	while (s1[i_s1])
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
 	{
-		i_s1++;
+		i++;
 	}
-	while (s2[i_s2])
-	{
-		i_s2++;
-	}
-	if (i_s2 > i_s1)
+	if ((s1[i] - s2[i]) > 0)
 		return (1);
-	else if (i_s2 < i_s1)
+	else if ((s1[i] - s2[i]) < 0)
 		return (-1);
 	else
 		return (0);
